@@ -3,30 +3,21 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import Image from "next/image";
 import { useState } from "react";
+import Link from "next/link";
 export default function Home({ data }) {
-  const [Data, setData] = useState(data);
   const [Query, setQuery] = useState("");
-  const [Region, setRegion] = useState('')
-  // let handleChange = () => {
-  //   setData(
-  //     data.filter(
-  //       (country) =>
-  //         country.name.toLowerCase().includes(Query.toLowerCase()) &&
-  //         country.region.toLowerCase().includes(Region.toLocaleLowerCase())
-  //     )
-  //   );
-  // };
+  const [Region, setRegion] = useState("");
   const filteredCountries = data.filter(
-  country =>
-    country.name.toLowerCase().includes(Query.toLowerCase()) &&
-    country.region.toLowerCase().includes(Region.toLocaleLowerCase())
-);
-  let handleSearch = (e) =>{
-      setQuery(e.target.value)
-  }
-  let handleFilterChange = (e) =>{
-    setRegion(e.target.value)
-  }
+    (country) =>
+      country.name.toLowerCase().includes(Query.toLowerCase()) &&
+      country.region.toLowerCase().includes(Region.toLocaleLowerCase())
+  );
+  let handleSearch = (e) => {
+    setQuery(e.target.value);
+  };
+  let handleFilterChange = (e) => {
+    setRegion(e.target.value);
+  };
   return (
     <div className={styles.Home}>
       <div className={styles.filterBar}>
@@ -40,8 +31,12 @@ export default function Home({ data }) {
             id=""
           />
         </div>
-        <select name="Filter" id={styles.filterRegion} onChange={handleFilterChange}>
-          <option value="" selected>
+        <select
+          name="Filter"
+          id={styles.filterRegion}
+          onChange={handleFilterChange}
+        >
+          <option value="" defaultValue>
             All
           </option>
           <option value="Africa">Africa</option>
@@ -53,26 +48,36 @@ export default function Home({ data }) {
       </div>
       <div className={styles.section}>
         {filteredCountries.map((country) => (
-          <div className={styles.card} key={country.alpha2Code}>
-            <Image
-              className={styles.flag}
-              height={160}
-              width={265}
-              src={country.flags.svg}
-              alt=""
-            />
-            <h2>{country.name}</h2>
-            <p>
-              <span>Population:</span> {country.population}
-            </p>
-            <p>
-              <span>Region:</span> {country.region}
-            </p>
-            <p>
-              <span>Capital:</span> {country.capital}
-            </p>
-          </div>
-        ))}
+          <Link
+            as={`/country/${country.alpha3Code}`}
+            href="/country/[code]"
+            key={country.alpha2Code}
+            passHref={true}
+          >
+            <div className={styles.card}>
+              <Image
+                className={styles.flag}
+                height={160}
+                width={265}
+                src={country.flags.svg}
+                alt=""
+              />
+              <h2>{country.name}</h2>
+              <p>
+                <span>Population:</span>
+                {country.population}{" "}
+              </p>
+              <p>
+                <span>Region:</span>
+                {country.region}{" "}
+              </p>
+              <p>
+                <span>Capital:</span>
+                {country.capital}{" "}
+              </p>
+            </div>
+          </Link>
+        ))}{" "}
       </div>
     </div>
   );
@@ -82,6 +87,8 @@ export async function getServerSideProps(context) {
   const res = await fetch("https://restcountries.com/v2/all");
   const data = await res.json();
   return {
-    props: { data },
+    props: {
+      data,
+    },
   };
 }

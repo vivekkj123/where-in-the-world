@@ -7,6 +7,9 @@
     height: 80px;
     align-items: center;
 }
+.Header > h2{
+    cursor:pointer;
+}
 .MoonIcon {
     margin-right: 15px;
 }
