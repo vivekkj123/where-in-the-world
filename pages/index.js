@@ -5,14 +5,28 @@ import Image from "next/image";
 import { useState } from "react";
 export default function Home({ data }) {
   const [Data, setData] = useState(data);
-  let handleChange = (e) => {
-    let Region = e.target.value;
-    setData(
-      data.filter((country) =>
-        country.region.toLowerCase().includes(Region.toLocaleLowerCase())
-      )
-    );
-  };
+  const [Query, setQuery] = useState("");
+  const [Region, setRegion] = useState('')
+  // let handleChange = () => {
+  //   setData(
+  //     data.filter(
+  //       (country) =>
+  //         country.name.toLowerCase().includes(Query.toLowerCase()) &&
+  //         country.region.toLowerCase().includes(Region.toLocaleLowerCase())
+  //     )
+  //   );
+  // };
+  const filteredCountries = data.filter(
+  country =>
+    country.name.toLowerCase().includes(Query.toLowerCase()) &&
+    country.region.toLowerCase().includes(Region.toLocaleLowerCase())
+);
+  let handleSearch = (e) =>{
+      setQuery(e.target.value)
+  }
+  let handleFilterChange = (e) =>{
+    setRegion(e.target.value)
+  }
   return (
     <div className={styles.Home}>
       <div className={styles.filterBar}>
@@ -22,10 +36,11 @@ export default function Home({ data }) {
             type="search"
             placeholder="Search for a country..."
             className={styles.searchBox}
+            onChange={handleSearch}
             id=""
           />
         </div>
-        <select name="Filter" id={styles.filterRegion} onChange={handleChange}>
+        <select name="Filter" id={styles.filterRegion} onChange={handleFilterChange}>
           <option value="" selected>
             All
           </option>
@@ -37,7 +52,7 @@ export default function Home({ data }) {
         </select>
       </div>
       <div className={styles.section}>
-        {Data.map((country) => (
+        {filteredCountries.map((country) => (
           <div className={styles.card} key={country.alpha2Code}>
             <Image
               className={styles.flag}
