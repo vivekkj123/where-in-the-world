@@ -2,6 +2,7 @@
   width: 480px;
   /* width: 90%; */
   background-color: var(--color-element-primary);
+  color: var(--color-text-primary);
   height: 55px;
   padding-left: 5rem;
   border: none;
@@ -23,7 +24,7 @@
 }
 #filterRegion {
   background-color: var(--color-element-primary);
-
+  color: var(--color-text-primary);
   border: none;
   border-radius: 0.5rem;
   padding: 1rem;

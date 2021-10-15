@@ -1,12 +1,15 @@
 .CountryDetails {
   padding: 80px;
   background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+
 }
 .detailsCountry {
   display: flex;
 }
 .backButton {
   background-color: var(--color-element-primary);
+  color: var(--color-text-primary);
   border: none;
   width: 10rem;
   height: 3rem;
@@ -47,6 +50,7 @@
   width: 100px;
   border: none;
   background-color: var(--color-element-primary);
+  color: var(--color-text-primary);
   box-shadow: 2px 5px 15px 2px rgb(0 0 0 / 10%);
   cursor: pointer;
 }
