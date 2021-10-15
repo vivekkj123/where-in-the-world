@@ -4,6 +4,7 @@ import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import Image from "next/image";
 import { useState } from "react";
 import Link from "next/link";
+import Head from 'next/head'
 export default function Home({ data }) {
   const [Query, setQuery] = useState("");
   const [Region, setRegion] = useState("");
@@ -19,7 +20,11 @@ export default function Home({ data }) {
     setRegion(e.target.value);
   };
   return (
+    
     <div className={styles.Home}>
+      <Head>
+      <title>Where In The World | Frontend mentor project by Vivek K J</title>
+    </Head>
       <div className={styles.filterBar}>
         <div>
           <FontAwesomeIcon className={styles.faSearch} icon={faSearch} />
@@ -55,13 +60,18 @@ export default function Home({ data }) {
             passHref={true}
           >
             <div className={styles.card}>
+              <div className="Flag">
+
               <Image
                 className={styles.flag}
                 height={160}
                 width={265}
+                layout='responsive'
                 src={country.flags.svg}
                 alt=""
               />
+              </div>
+
               <h2>{country.name}</h2>
               <p>
                 <span>Population:</span>

@@ -1,18 +1,23 @@
-.Header{
-    padding: 0px 30px;
-    border-bottom: 1px solid #eaeaea;
-    display: flex;
-    justify-content: space-between;
-    background-color: #fff;
-    height: 80px;
-    align-items: center;
+.Header {
+  padding: 0px 30px;
+  border-bottom: 1px solid #eaeaea;
+  display: flex;
+  justify-content: space-between;
+  background-color: #fff;
+  height: 80px;
+  align-items: center;
 }
-.Header > h2{
-    cursor:pointer;
+.Header > h2 {
+  cursor: pointer;
 }
 .MoonIcon {
-    margin-right: 15px;
+  margin-right: 15px;
 }
-.darkToggle{
-    cursor: pointer;
+.darkToggle {
+  cursor: pointer;
+}
+@media only screen and (max-width: 480px) {
+  .Header {
+    padding: 0px 10px;
+  }
 }

@@ -4,11 +4,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import Head from 'next/head'
 const CountryDetails = ({ data }) => {
     const router = useRouter()
-  console.log(data);
   return (
     <div className={styles.CountryDetails}>
+      <Head>
+        <title>{data.name}</title>
+      </Head>
       <button className={styles.backButton} onClick={()=>router.back()}>
         <FontAwesomeIcon className={styles.ArrowIcon} icon={faArrowLeft} />
         Back
