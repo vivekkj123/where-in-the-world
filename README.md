@@ -32,8 +32,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://www.frontendmentor.io/solutions/where-in-the-world-using-nextjs-OPsDd2dPS)
-- Live Site URL: [Add live site URL here](https://where-in-the-world-pearl.vercel.app/)
+- Solution URL: [Click ME](https://www.frontendmentor.io/solutions/where-in-the-world-using-nextjs-OPsDd2dPS)
+- Live Site URL: [Click ME](https://where-in-the-world-pearl.vercel.app/)
 
 ## My process
 
