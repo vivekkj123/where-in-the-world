@@ -1,9 +1,9 @@
 .Header {
   padding: 0px 30px;
-  border-bottom: 1px solid #eaeaea;
+  /* border-bottom: 1px solid #eaeaea; */
   display: flex;
   justify-content: space-between;
-  background-color: #fff;
+  background-color: var(--color-element-primary);
   height: 80px;
   align-items: center;
 }

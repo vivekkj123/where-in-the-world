@@ -1,12 +1,12 @@
 .CountryDetails {
   padding: 80px;
-  background-color: #fff;
+  background-color: var(--color-bg-primary);
 }
 .detailsCountry {
   display: flex;
 }
 .backButton {
-  background-color: #fff;
+  background-color: var(--color-element-primary);
   border: none;
   width: 10rem;
   height: 3rem;
@@ -23,7 +23,7 @@
 .flag {
   margin-top: 80px;
   min-height: 400px;
-min-width: 560px;
+  min-width: 560px;
 }
 
 .DetailsSection {
@@ -46,19 +46,19 @@ min-width: 560px;
   padding: 10px;
   width: 100px;
   border: none;
-  background-color: #fff;
+  background-color: var(--color-element-primary);
   box-shadow: 2px 5px 15px 2px rgb(0 0 0 / 10%);
   cursor: pointer;
 }
 @media only screen and (max-width: 480px) {
-.backButton{
-  margin-top: 2rem;
-}
+  .backButton {
+    margin-top: 2rem;
+  }
   .flag {
     min-height: 300px;
-  min-width: 100%;
-  padding: 0px 15px;
-  margin-top: 3rem;
+    min-width: 100%;
+    padding: 0px 15px;
+    margin-top: 3rem;
   }
   .CountryDetails {
     padding: 10px;
@@ -72,7 +72,6 @@ min-width: 560px;
   }
   .DetailsSection {
     padding-top: 0px;
-  padding-left: 30px;
-
+    padding-left: 30px;
   }
 }

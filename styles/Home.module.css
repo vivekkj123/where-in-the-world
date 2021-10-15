@@ -1,6 +1,7 @@
 .searchBox {
   width: 480px;
   /* width: 90%; */
+  background-color: var(--color-element-primary);
   height: 55px;
   padding-left: 5rem;
   border: none;
@@ -9,6 +10,7 @@
 }
 .Home {
   padding: 45px 50px;
+  background-color: var(--color-bg-primary);
 }
 .faSearch {
   position: relative;
@@ -20,36 +22,40 @@
   justify-content: space-between;
 }
 #filterRegion {
-  background-color: #fff;
+  background-color: var(--color-element-primary);
+
   border: none;
   border-radius: 0.5rem;
   padding: 1rem;
   box-shadow: 2px 5px 15px 2px rgb(0 0 0 / 10%);
 }
 #filterRegion > * {
-  background-color: #fff;
+  /* background-color: #fff; */
+  background-color: var(--color-bg-primary);
 }
 .card {
-  background: white;
+  background-color: var(--color-element-primary);
+  color: var(--color-text-primary);
   width: 265px;
   margin-top: 45px;
   margin-left: 35px;
   box-shadow: 2px 5px 15px 2px rgb(0 0 0 / 10%);
   cursor: pointer;
+  border-radius: 10px;
 }
 /* .card > Image{
   width: 16.5rem;
 } */
-.card > p{
+.card > p {
   padding-left: 30px;
 }
-.card > h2{
+.card > h2 {
   padding-left: 30px;
 }
-.card > p > span{
+.card > p > span {
   font-weight: 600;
 }
-.section{
+.section {
   display: flex;
   flex-flow: row wrap;
 }
@@ -63,14 +69,14 @@
     color: #8c8c8c;
   }
   .Home {
-  padding: 10px 10px;
-}
-  .searchBox{
-  width: 90vw;
-  margin: 0px 5px;
-  flex-wrap: wrap;
+    padding: 10px 10px;
   }
-  .filterBar{
+  .searchBox {
+    width: 90vw;
+    margin: 0px 5px;
+    flex-wrap: wrap;
+  }
+  .filterBar {
     flex-wrap: wrap;
   }
   #filterRegion {
@@ -78,7 +84,7 @@
     margin-left: 5px;
     width: 10rem;
   }
-  .card{
+  .card {
     width: 80%;
   }
 }
